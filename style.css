@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    /* padding: 30px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* margin: 20px; */
+    /* height: 15vh; */
+}
+
+#navbar>div:first-child{
+    width: 5vw;
+}
+
+#navbar>div:first-child>img{
+    height: 10vh;
+    position: relative;
+    left: 2vw;
+}
+
+#navbar>div:nth-child(2){
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+    margin: auto;
+    /* border: 2px solid blue; */
+}
+
+#navbar>div:nth-child(2)>div:nth-child(6) span{
+    position: relative;
+    bottom: 10px;
+    color: red;
+}
+
+#navbar>div:nth-child(3){
+    margin: auto;
+    display: flex;
+    height: 4.5vh;
+    /* border: 2px solid red; */
+    /* box-sizing: border-box; */
+    /* border: 2px red; */
+    /* height: 5vh; */
+    border-radius: 5px;
+    background-color: rgb(224, 221, 221);
+    width: 35vw;
+    justify-content: space-between;
+
+}
+
+#navbar>div:nth-child(3)>div:first-child{
+    /* border: 2px solid blue; */
+    width: 3.5vw;
+}
+
+#navbar>div:nth-child(3)>div:last-child{
+    width: 30vw;
+    /* border: 2px solid violet; */
+}
+
+.searchInput img{
+    width: 1.5vw;
+    opacity: .50;
+}
+
+#navbar>div:nth-child(3) input{
+    width: 30vw;
+    background: none;
+    border: none;
+    margin: auto;
+    height: 100%;
+}
+
+
+#navbar>div:last-child{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin: auto;
+    /* padding-top: 20px; */
+}
+
+#container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+    margin-bottom: 50px;
+    margin-top: 5vh;
+}
+
+#container>div>img{
+    width: 100%;
+}
+
+#footer>div:first-child{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+.application img{
+    width: 10vw;
+}
+
+.socialMedia img {
+    width: 2vw;
+    margin-left: 20px;
+}
+
+#footer>div:nth-child(2){
+    width: 80%;
+    margin: auto;
+}
+
+#footer>div:nth-child(3){
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.contact{
+    color: rgba(35, 35, 194, 0.811);
+}
+
+
