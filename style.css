@@ -17,7 +17,7 @@
     width: 5vw;
 }
 
-#navbar>div:first-child>img{
+#navbar>div:first-child img{
     height: 10vh;
     position: relative;
     left: 2vw;
@@ -93,8 +93,25 @@
     margin-top: 5vh;
 }
 
+#container>div{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 #container>div>img{
-    width: 100%;
+    width: 50%;
+    height: 40vh;
+}
+
+#container>div>button{
+    margin: 20px;
+    border: none;
+    width: 10vw;
+    height: 5vh;
+    font-size: 20px;
+    color: rgb(7, 7, 46);
 }
 
 #footer>div:first-child{
