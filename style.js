@@ -6,6 +6,7 @@ let womenItem = JSON.parse(localStorage.getItem("womenCartProduct"))||[];
 let kidsItem = JSON.parse(localStorage.getItem("kidsCartProduct"))||[];
 let homeLivingItem = JSON.parse(localStorage.getItem("homeLivingCartProduct"))||[];
 let beautyItem = JSON.parse(localStorage.getItem("beautyProducts"))||[];
+let cartItem = JSON.parse(localStorage.getItem("cartProducts"))||[];
 
 let url = "https://636b4c05ad62451f9fada157.mockapi.io/products";
 
@@ -46,7 +47,12 @@ function displayData(data){
          description.innerText = items.description;
 
          let detail = document.createElement("button");
-         detail.innerText = "View Details";
+         detail.innerText = "Add to Cart";
+
+         detail.addEventListener("click",function(){
+                 cartItem.push(items);
+                 localStorage.setItem("cartProducts",JSON.stringify(cartItem));
+         })
 
          if(category.innerText=="Men"){
               manItem.push(items);
