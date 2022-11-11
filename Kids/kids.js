@@ -1,5 +1,6 @@
 
 let kidsItem = JSON.parse(localStorage.getItem("kidsCartProduct"));
+let cartItem = JSON.parse(localStorage.getItem("cartProducts"))||[];
 console.log(kidsItem);
 
 function displayData(kidsItem){
@@ -24,7 +25,12 @@ function displayData(kidsItem){
          description.innerText = items.description;
 
          let detail = document.createElement("button");
-         detail.innerText = "View Details";
+         detail.innerText = "Add to Cart";
+
+         detail.addEventListener("click",function(){
+                 cartItem.push(items);
+                 localStorage.setItem("cartProducts",JSON.stringify(cartItem));
+         })
 
          card.append(productImage,title,price,category,description,detail);
 

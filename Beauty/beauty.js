@@ -1,5 +1,6 @@
 
 let beautyItem = JSON.parse(localStorage.getItem("beautyProducts"));
+let cartItem = JSON.parse(localStorage.getItem("cartProducts"))||[];
 
 function displayData(beautyItem){
     //    document.querySelector("#container").innerHTML = "";
@@ -23,7 +24,12 @@ function displayData(beautyItem){
          description.innerText = items.description;
 
          let detail = document.createElement("button");
-         detail.innerText = "View Details";
+         detail.innerText = "Add to Cart";
+
+         detail.addEventListener("click",function(){
+                 cartItem.push(items);
+                 localStorage.setItem("cartProducts",JSON.stringify(cartItem));
+         })
 
          card.append(productImage,title,price,category,description,detail);
 
