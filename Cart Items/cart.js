@@ -1,5 +1,7 @@
 
 let cartItem = JSON.parse(localStorage.getItem("cartProducts"));
+let paymentItem = JSON.parse(localStorage.getItem("paymentProducts"))||[];
+
 let totalPrice = 0;
 
 function displayData(cartItem){
@@ -17,7 +19,7 @@ function displayData(cartItem){
          let price = document.createElement("h1");
          price.innerText = "Rs: "+items.price;
 
-        totalPrice = items.price;
+        totalPrice += items.price;
          
          let category = document.createElement("p");
          category.innerText = items.category;
@@ -30,13 +32,25 @@ function displayData(cartItem){
          
          remove.addEventListener("click",function(){
              deleteItem(cartItem,index);
+             location.reload();
+             totalPrice = totalPrice-items.price;
+            })
+
+            let payment = document.createElement("button");
+            payment.innerText = "Confirm Order";
+
+            payment.addEventListener("click",()=>{
+                paymentItem.push(items);
+                localStorage.setItem("paymentProducts",JSON.stringify(paymentItem));
+
             })
             
-            card.append(productImage,title,price,category,description,remove);
+            card.append(productImage,title,price,category,description,remove,payment);
             
             document.querySelector("#container").append(card);
             
         })
+        document.querySelector("#price").innerText = "Total Price: "+totalPrice;
     }
     
     displayData(cartItem);
